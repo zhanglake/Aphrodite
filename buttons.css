@@ -1,0 +1,38 @@
+.btn {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.btn.tiny {
+    width: 60px;
+}
+.btn.small {
+    width: 80px;
+}
+.btn.large {
+    width: 120px;
+}
+.btn.huge {
+    width: 140px;
+}
+.btn.normal {
+    color: #bfbfbf;
+    background-color: #ffffff;
+    border: 1px solid #f1f1f1;
+}
+.btn.normal:hover {
+    background-color: #f1f1f1;
+    color: #bfbfbf;
+}
+.btn.danger {
+    background-color: #ff6b6b;
+}
+.btn.danger:hover {
+    background-color: #e9535c;
+}
