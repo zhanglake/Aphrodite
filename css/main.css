@@ -100,6 +100,12 @@ html, body {
     list-style: none;
     cursor: pointer;
 }
+.menu > ul > li >img {
+    width: 20px;
+    height: 20px;
+    margin: 15px 15px 15px 0px;
+    float: left;
+}
 .menu > ul > li:hover,
 .menu > ul > li.selected {
     background-color: #1e202c;
@@ -162,6 +168,23 @@ html, body {
     margin-top: 10px;
     line-height: 50px;
     font-size: 20px;
+}
+.right > .container .panel > .panel-header > img {
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin: 25px 15px 15px 0px;
+    cursor: pointer;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+.right > .container .panel > .panel-header > img:hover {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -moz-transform: rotate(180deg); /* Firefox */
+    -webkit-transform: rotate(180deg); /* Safari and Chrome */
+    -o-transform: rotate(180deg); /* Opera */
 }
 .right > .container .panel > .panel-body {
     width: 100%;
