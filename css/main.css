@@ -6,10 +6,17 @@ html, body {
     font-family: Tahoma;
     font-weight: 500;
 }
+.overflow-hidden {
+    overflow-y: hidden;
+}
 .top {
     width: 100% !important;
     height: 120px;
     box-shadow: 0px 2px 2px #e7e7e7;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
 }
 .user {
     width: 250px;
@@ -17,7 +24,7 @@ html, body {
     background-color: #a48ad4;
     display: inline-block;
 }
-.user > #photo {
+.user #photo {
     width: 60px;
     height: 60px;
     background-color: #ffffff;
@@ -27,12 +34,12 @@ html, body {
     border-radius: 100%;
     cursor: pointer;
 }
-.user > #photo > img {
+.user #photo img {
     width: 60px;
     height: 60px;
     border-radius: 100%;
 }
-.user > #user-name {
+.user #user-name {
     width: 100px;
     height: 20px;
     line-height: 20px;
@@ -44,7 +51,7 @@ html, body {
     font-weight: 900;
     cursor: pointer;
 }
-.user > #user-description {
+.user #user-description {
     width: 100px;
     height: 20px;
     line-height: 20px;
@@ -55,7 +62,7 @@ html, body {
     padding: 0px 10px;
     cursor: pointer;
 }
-.top > #menu-btn {
+.top #menu-btn {
     display: inline-block;
     width: 28px;
     height: 28px;
@@ -64,7 +71,7 @@ html, body {
     left: 300px;
     cursor: pointer;
 }
-.top > #proj {
+.top #proj {
     width: auto;
     height: 46px;
     line-height: 46px;
@@ -77,7 +84,7 @@ html, body {
 }
 .left {
     width: 250px;
-    position: absolute;
+    position: fixed;
     top: 120px;
     bottom: 0px;
     background-color: #333645;
@@ -86,12 +93,12 @@ html, body {
     font-size: 14px;
     color: #97999e;
 }
-.menu > ul {
+.menu ul {
     width: 100%;
     margin: 0px;
     padding: 0px;
 }
-.menu > ul > li {
+.menu ul li {
     width: auto;
     height: 50px;
     line-height: 50px;
@@ -100,18 +107,18 @@ html, body {
     list-style: none;
     cursor: pointer;
 }
-.menu > ul > li >img {
+.menu ul li img {
     width: 20px;
     height: 20px;
     margin: 15px 15px 15px 0px;
     float: left;
 }
-.menu > ul > li:hover,
-.menu > ul > li.selected {
+.menu ul li:hover,
+.menu ul li.selected {
     background-color: #1e202c;
     color: #ffffff;
 }
-.menu > ul > li > label {
+.menu ul li label {
     display: inline-block;
     width: 40px;
     height: 20px;
@@ -124,20 +131,21 @@ html, body {
     cursor: pointer;
 }
 .right {
-    position: absolute;
+    position: fixed;
     top: 122px;
     bottom: 0px;
     left: 250px;
     right: 0px;
     background-color: #f6f6f6;
 }
-.right > .container {
+.right .container {
     position: absolute;
     margin: 20px;
     left: 0px;
     right: 0px;
     top: 0px;
     bottom: 0px;
+    overflow: auto;
 }
 .col-3 {
     width: 33.333333%;
@@ -147,7 +155,7 @@ html, body {
     width: 66.666666%;
     float: left;
 }
-.right > .container .panel {
+.right .container .panel {
     width: auto;
     height: 400px;
     position: inherit;
@@ -157,19 +165,19 @@ html, body {
     box-shadow: 2px 2px 2px #e7e7e7;
     font-size: 14px;
 }
-.right > .container .panel > .panel-head {
+.right .container .panel .panel-head {
     width: 100%;
     height: 70px;
     color: #bbbbbb;
     border-bottom: 2px solid #f4f4f4;
 }
-.right > .container .panel > .panel-head > label {
+.right .container .panel .panel-head label {
     display: inline-block;
     margin-top: 10px;
     line-height: 50px;
     font-size: 20px;
 }
-.right > .container .panel > .panel-head > img {
+.right .container .panel .panel-head img {
     width: 20px;
     height: 20px;
     float: right;
@@ -179,18 +187,18 @@ html, body {
     -moz-transition:all .5s ease-in-out;
     transition:all .5s ease-in-out;
 }
-.right > .container .panel > .panel-head > img:hover {
+.right .container .panel .panel-head img:hover {
     transform: rotate(180deg);
     -ms-transform: rotate(180deg); /* IE 9 */
     -moz-transform: rotate(180deg); /* Firefox */
     -webkit-transform: rotate(180deg); /* Safari and Chrome */
     -o-transform: rotate(180deg); /* Opera */
 }
-.right > .container .panel > .panel-body {
+.right .container .panel .panel-body {
     position: relative;
     width: 100%;
 }
-.right > .container .panel > .panel-body > .panel-background-shadow {
+.right .container .panel .panel-body .panel-background-shadow {
     width: 100%;
     height: 310px;
     margin: 10px 0px;
@@ -200,19 +208,18 @@ html, body {
     background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 20%);
     background-size: 100% 100%;
 }
-.right > .container .panel .panel-body .panel-body-content {
+.right .container .panel .panel-body .panel-body-content {
     width: 100%;
     height: 310px;
     margin: 10px 0px;
-    overflow-y: hidden;
     position: absolute;
 }
-.right > .container .panel .panel-body .panel-body-content .member {
+.right .container .panel .panel-body .panel-body-content .member {
     width: 100%;
     height: 60px;
     margin: 10px 0px;
 }
-.right > .container .panel .panel-body .panel-body-content .member > .member-photo {
+.right .container .panel .panel-body .panel-body-content .member .member-photo {
     width: 50px;
     height: 50px;
     margin: 5px 20px 5px 0px;
@@ -220,25 +227,25 @@ html, body {
     float: left;
     border-radius: 100%;
 }
-.right > .container .panel .panel-body .panel-body-content .member > .member-photo > img {
+.right .container .panel .panel-body .panel-body-content .member .member-photo img {
     width: 50px;
     height: 50px;
     border-radius: 100%;
 }
-.right > .container .panel .panel-body .panel-body-content .member > .member-info {
+.right .container .panel .panel-body .panel-body-content .member .member-info {
     width: auto;
     height:  50px;
     float: left;
     margin: 5px 0px;
 }
-.right > .container .panel .panel-body .panel-body-content .member > .member-info > .member-name {
+.right .container .panel .panel-body .panel-body-content .member .member-info .member-name {
     width: auto;
     height: 20px;
     line-height: 20px;
     padding-top: 5px;
     font-weight: 900;
 }
-.right > .container .panel .panel-body .panel-body-content .member > .member-info > .member-description {
+.right .container .panel .panel-body .panel-body-content .member .member-info .member-description {
     width: auto;
     height: 20px;
     line-height: 20px;
@@ -246,13 +253,13 @@ html, body {
     padding: 0px;
     color: #d2d2d3;
 }
-.right > .container .panel .panel-body .panel-body-content .object {
+.right .container .panel .panel-body .panel-body-content .object {
     width: 100%;
     height: 60px;
     padding: 10px 0px;
     border-bottom: 1px solid #f4f4f4;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-left {
+.right .container .panel .panel-body .panel-body-content .object .object-left {
     width: 100px;
     height: 60px;
     padding: 10px 0px;
@@ -260,74 +267,74 @@ html, body {
     border-right: 1px solid #f4f4f4;
     float: left;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status {
+.right .container .panel .panel-body .panel-body-content .object .object-left .status {
     width: 100px;
     height: 30px;
     line-height: 30px;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-upload,
-.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-task,
-.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-deleted,
-.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-working {
+.right .container .panel .panel-body .panel-body-content .object .object-left .status  .status-upload,
+.right .container .panel .panel-body .panel-body-content .object .object-left .status  .status-task,
+.right .container .panel .panel-body .panel-body-content .object .object-left .status  .status-deleted,
+.right .container .panel .panel-body .panel-body-content .object .object-left .status  .status-working {
     width: 90px;
     height: 30px;
     color: #ffffff;
     padding-left: 10px;
     border-radius: 20px 0px 0px 20px;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-upload {
+.right .container .panel .panel-body .panel-body-content .object .object-left .status  .status-upload {
     background-color: #65c3df;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-task {
+.right .container .panel .panel-body .panel-body-content .object .object-left .status  .status-task {
     background-color: #f8cb00;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-deleted {
+.right .container .panel .panel-body .panel-body-content .object .object-left .status  .status-deleted {
     background-color: #ff6b6b;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-working {
+.right .container .panel .panel-body .panel-body-content .object .object-left .status  .status-working {
     background-color: #45b7af;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-left > .time {
+.right .container .panel .panel-body .panel-body-content .object .object-left .time {
     width: 100px;
     height: 30px;
     line-height: 30px;
     text-align: center;
     color: #d2d2d3;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-center {
+.right .container .panel .panel-body .panel-body-content .object .object-center {
     width: auto;
     height: 60px;
     padding: 10px 10px;
     font-size: 18px;
     float: left;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-center > .object-name {
+.right .container .panel .panel-body .panel-body-content .object .object-center .object-name {
     width: 100%;
     height: 30px;
     line-height: 30px;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-center > .object-description {
+.right .container .panel .panel-body .panel-body-content .object .object-center .object-description {
     width: 100%;
     height: 30px;
     line-height: 30px;
     font-size: 14px;
     color: #d2d2d3;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-right {
+.right .container .panel .panel-body .panel-body-content .object .object-right {
     width: auto;
     height: 60px;
     padding: 10px 10px 10px 0px;
     font-size: 16px;
     float: right;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-right > .progress-background {
+.right .container .panel .panel-body .panel-body-content .object .object-right .progress-background {
     width: 200px;
     height: 10px;
     margin: 10px 0px;
     background-color: #fafafa;
     border-radius: 5px;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-right > .progress {
+.right .container .panel .panel-body .panel-body-content .object .object-right .progress {
     width: 82px;
     height: 10px;
     margin: 10px 0px;
@@ -335,7 +342,7 @@ html, body {
     border-radius: 5px;
     float: left;
 }
-.right > .container .panel .panel-body .panel-body-content .object > .object-right > .progress-size {
+.right .container .panel .panel-body .panel-body-content .object .object-right .progress-size {
     width: auto;
     height: 30px;
     line-height: 30px;
@@ -345,12 +352,15 @@ html, body {
     color: #d2d2d3;
     text-align: right;
 }
-.right > .container .panel > .panel-foot {
+.right .container .panel .panel-foot {
     width: 100%;
     height: 10px;
     text-align: center;
 }
-.right > .container .panel > .panel-foot > a {
+.right .container .panel .panel-foot a.drop-down {
+    display: inline-block;
+    width: 50px;
+    height: 10px;
     line-height: 10px;
     margin: 0px;
     padding: 0px;

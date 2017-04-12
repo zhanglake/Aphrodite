@@ -1,5 +1,8 @@
 var MainController = {
     init: function () {
+        // $(".right .container").slimScroll({
+            // height: 'auto'
+        // });
         $("#menu-btn").click(function () {
             var closed = $(".left").css("left") === '-250px';
             // 关闭状态
@@ -36,6 +39,16 @@ var MainController = {
             $img.parent().parent().html("");
             $this_panel.animate({
                 width: '0px'
+            });
+        });
+        $("a.drop-down").click(function() {
+            $(this).hide();
+            $(this).parent().prev().find(".panel-background-shadow").hide();
+            $(this).parent().parent().animate({
+                height: '540px'
+            });
+            $(this).parent().prev().find(".panel-body-content").animate({
+                height: '450px'
             });
         });
     }
