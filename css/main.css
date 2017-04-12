@@ -157,19 +157,19 @@ html, body {
     box-shadow: 2px 2px 2px #e7e7e7;
     font-size: 14px;
 }
-.right > .container .panel > .panel-header {
+.right > .container .panel > .panel-head {
     width: 100%;
     height: 70px;
     color: #bbbbbb;
     border-bottom: 2px solid #f4f4f4;
 }
-.right > .container .panel > .panel-header > label {
+.right > .container .panel > .panel-head > label {
     display: inline-block;
     margin-top: 10px;
     line-height: 50px;
     font-size: 20px;
 }
-.right > .container .panel > .panel-header > img {
+.right > .container .panel > .panel-head > img {
     width: 20px;
     height: 20px;
     float: right;
@@ -179,7 +179,7 @@ html, body {
     -moz-transition:all .5s ease-in-out;
     transition:all .5s ease-in-out;
 }
-.right > .container .panel > .panel-header > img:hover {
+.right > .container .panel > .panel-head > img:hover {
     transform: rotate(180deg);
     -ms-transform: rotate(180deg); /* IE 9 */
     -moz-transform: rotate(180deg); /* Firefox */
@@ -187,16 +187,32 @@ html, body {
     -o-transform: rotate(180deg); /* Opera */
 }
 .right > .container .panel > .panel-body {
+    position: relative;
     width: 100%;
-    height: auto;
-    margin: 10px 0px;
 }
-.right > .container .panel > .panel-body > .member {
+.right > .container .panel > .panel-body > .panel-background-shadow {
+    width: 100%;
+    height: 310px;
+    margin: 10px 0px;
+    float: left;
+    z-index: 99;
+    position: relative;
+    background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 20%);
+    background-size: 100% 100%;
+}
+.right > .container .panel .panel-body .panel-body-content {
+    width: 100%;
+    height: 310px;
+    margin: 10px 0px;
+    overflow-y: hidden;
+    position: absolute;
+}
+.right > .container .panel .panel-body .panel-body-content .member {
     width: 100%;
     height: 60px;
     margin: 10px 0px;
 }
-.right > .container .panel > .panel-body > .member > .member-photo {
+.right > .container .panel .panel-body .panel-body-content .member > .member-photo {
     width: 50px;
     height: 50px;
     margin: 5px 20px 5px 0px;
@@ -204,25 +220,25 @@ html, body {
     float: left;
     border-radius: 100%;
 }
-.right > .container .panel > .panel-body > .member > .member-photo > img {
+.right > .container .panel .panel-body .panel-body-content .member > .member-photo > img {
     width: 50px;
     height: 50px;
     border-radius: 100%;
 }
-.right > .container .panel > .panel-body > .member > .member-info {
+.right > .container .panel .panel-body .panel-body-content .member > .member-info {
     width: auto;
     height:  50px;
     float: left;
     margin: 5px 0px;
 }
-.right > .container .panel > .panel-body > .member > .member-info > .member-name {
+.right > .container .panel .panel-body .panel-body-content .member > .member-info > .member-name {
     width: auto;
     height: 20px;
     line-height: 20px;
     padding-top: 5px;
     font-weight: 900;
 }
-.right > .container .panel > .panel-body > .member > .member-info > .member-description {
+.right > .container .panel .panel-body .panel-body-content .member > .member-info > .member-description {
     width: auto;
     height: 20px;
     line-height: 20px;
@@ -230,13 +246,13 @@ html, body {
     padding: 0px;
     color: #d2d2d3;
 }
-.right > .container .panel > .panel-body > .object {
+.right > .container .panel .panel-body .panel-body-content .object {
     width: 100%;
     height: 60px;
     padding: 10px 0px;
     border-bottom: 1px solid #f4f4f4;
 }
-.right > .container .panel > .panel-body > .object > .object-left {
+.right > .container .panel .panel-body .panel-body-content .object > .object-left {
     width: 100px;
     height: 60px;
     padding: 10px 0px;
@@ -244,74 +260,74 @@ html, body {
     border-right: 1px solid #f4f4f4;
     float: left;
 }
-.right > .container .panel > .panel-body > .object > .object-left > .status {
+.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status {
     width: 100px;
     height: 30px;
     line-height: 30px;
 }
-.right > .container .panel > .panel-body > .object > .object-left > .status >  .status-upload,
-.right > .container .panel > .panel-body > .object > .object-left > .status >  .status-task,
-.right > .container .panel > .panel-body > .object > .object-left > .status >  .status-deleted,
-.right > .container .panel > .panel-body > .object > .object-left > .status >  .status-working {
+.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-upload,
+.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-task,
+.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-deleted,
+.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-working {
     width: 90px;
     height: 30px;
     color: #ffffff;
     padding-left: 10px;
     border-radius: 20px 0px 0px 20px;
 }
-.right > .container .panel > .panel-body > .object > .object-left > .status >  .status-upload {
+.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-upload {
     background-color: #65c3df;
 }
-.right > .container .panel > .panel-body > .object > .object-left > .status >  .status-task {
+.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-task {
     background-color: #f8cb00;
 }
-.right > .container .panel > .panel-body > .object > .object-left > .status >  .status-deleted {
+.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-deleted {
     background-color: #ff6b6b;
 }
-.right > .container .panel > .panel-body > .object > .object-left > .status >  .status-working {
+.right > .container .panel .panel-body .panel-body-content .object > .object-left > .status >  .status-working {
     background-color: #45b7af;
 }
-.right > .container .panel > .panel-body > .object > .object-left > .time {
+.right > .container .panel .panel-body .panel-body-content .object > .object-left > .time {
     width: 100px;
     height: 30px;
     line-height: 30px;
     text-align: center;
     color: #d2d2d3;
 }
-.right > .container .panel > .panel-body > .object > .object-center {
+.right > .container .panel .panel-body .panel-body-content .object > .object-center {
     width: auto;
     height: 60px;
     padding: 10px 10px;
     font-size: 18px;
     float: left;
 }
-.right > .container .panel > .panel-body > .object > .object-center > .object-name {
+.right > .container .panel .panel-body .panel-body-content .object > .object-center > .object-name {
     width: 100%;
     height: 30px;
     line-height: 30px;
 }
-.right > .container .panel > .panel-body > .object > .object-center > .object-description {
+.right > .container .panel .panel-body .panel-body-content .object > .object-center > .object-description {
     width: 100%;
     height: 30px;
     line-height: 30px;
     font-size: 14px;
     color: #d2d2d3;
 }
-.right > .container .panel > .panel-body > .object > .object-right {
+.right > .container .panel .panel-body .panel-body-content .object > .object-right {
     width: auto;
     height: 60px;
     padding: 10px 10px 10px 0px;
     font-size: 16px;
     float: right;
 }
-.right > .container .panel > .panel-body > .object > .object-right > .progress-background {
+.right > .container .panel .panel-body .panel-body-content .object > .object-right > .progress-background {
     width: 200px;
     height: 10px;
     margin: 10px 0px;
     background-color: #fafafa;
     border-radius: 5px;
 }
-.right > .container .panel > .panel-body > .object > .object-right > .progress {
+.right > .container .panel .panel-body .panel-body-content .object > .object-right > .progress {
     width: 82px;
     height: 10px;
     margin: 10px 0px;
@@ -319,7 +335,7 @@ html, body {
     border-radius: 5px;
     float: left;
 }
-.right > .container .panel > .panel-body > .object > .object-right > .progress-size {
+.right > .container .panel .panel-body .panel-body-content .object > .object-right > .progress-size {
     width: auto;
     height: 30px;
     line-height: 30px;
@@ -328,4 +344,16 @@ html, body {
     font-style: italic;
     color: #d2d2d3;
     text-align: right;
+}
+.right > .container .panel > .panel-foot {
+    width: 100%;
+    height: 10px;
+    text-align: center;
+}
+.right > .container .panel > .panel-foot > a {
+    line-height: 10px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 10px;
+    cursor: pointer;
 }
