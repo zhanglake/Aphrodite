@@ -93,6 +93,18 @@ html, body {
     font-size: 14px;
     color: #97999e;
 }
+.menu .sideLine {
+    width: 247px;
+    height: 70px;
+    position: absolute;
+    left: 0px;
+    top: 0;
+    z-index: -1;
+    line-height: 0;
+    font-size: 0;
+    border-left: 3px solid #f8cb00 ;
+    background-color: #1e202c;
+}
 .menu ul {
     width: 100%;
     margin: 0px;
@@ -115,7 +127,6 @@ html, body {
 }
 .menu ul li:hover,
 .menu ul li.selected {
-    background-color: #1e202c;
     color: #ffffff;
 }
 .menu ul li label {

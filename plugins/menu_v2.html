@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/plugins/menu_v2.css" type="text/css">
+    </head>
+    <body>
+        <div class="left">
+            <div class="menu">
+                <div class="sideLine"></div>
+                <ul>
+                    <li>
+                        <img src="../icons/icon1.png"/>DASHBOARD
+                    </li>
+                    <li>
+                        <img src="../icons/icon1.png"/>DASHBOARD
+                    </li>
+                    <li class="selected">
+                        <img src="../icons/icon1.png"/>DASHBOARD
+                    </li>
+                    <li>
+                        <img src="../icons/icon1.png"/>DASHBOARD
+                    </li>
+                    <li>
+                        <img src="../icons/icon1.png"/>DASHBOARD
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script src="../js/jquery-1.11.1.js"></script>
+    <script>
+        $(function(){
+            var verNav = $(".left>.menu>ul");
+            var line = verNav.siblings(".sideLine");
+            var curY = verNav.children("li.selected").position().top;
+
+            verNav.find("li").mouseenter(function(){
+                var thisY = $(this).position().top;
+                line.stop(true,true).animate({
+                    top: thisY
+                }, 200);
+                return false
+            }).end().mouseleave(function(){
+                line.stop(true,true).animate({
+                    top: curY
+                }, 400)
+            }).trigger("mouseleave");
+        });
+    </script>
+</html>

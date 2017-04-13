@@ -3,6 +3,7 @@ var MainController = {
         // $(".right .container").slimScroll({
             // height: 'auto'
         // });
+        // 隐藏/显示左侧菜单
         $("#menu-btn").click(function () {
             var closed = $(".left").css("left") === '-250px';
             // 关闭状态
@@ -33,6 +34,7 @@ var MainController = {
                 });
             }
         });
+        // 模块关闭事件
         $(".x_btn").click(function () {
             var $img = $(this);
             var $this_panel = $img.parent().parent().parent();
@@ -41,6 +43,7 @@ var MainController = {
                 width: '0px'
             });
         });
+        // 模块向下展示
         $("a.drop-down").click(function() {
             $(this).hide();
             $(this).parent().prev().find(".panel-background-shadow").hide();
@@ -55,4 +58,21 @@ var MainController = {
 }
 $(document).ready(function () {
     MainController.init();
+    // 菜单特效
+    $(function(){
+        var verNav = $(".left>.menu>ul");
+        var line = verNav.siblings(".sideLine");
+        var curY = verNav.children("li.selected").position().top;
+        verNav.find("li").mouseenter(function(){
+            var thisY = $(this).position().top;
+            line.stop(true,true).animate({
+                top: thisY
+            }, 200);
+            return false
+        }).end().mouseleave(function(){
+            line.stop(true,true).animate({
+                top: curY
+            }, 400)
+        }).trigger("mouseleave");
+    });
 });
